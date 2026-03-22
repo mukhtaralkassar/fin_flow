@@ -1,17 +1,30 @@
-# fin_flow
+# Fin Flow
 
-A new Flutter project.
+A personal finance manager that helps you understand your spending by categorizing transactions through an intuitive swipe gesture.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Log transactions with a title and amount
+- Swipe right to mark as **Need** (essential expense)
+- Swipe left to mark as **Want** (optional expense)
+- Visual balance overview
+- Clean dark UI with Emerald and Coral color scheme
 
-A few resources to get you started if this is your first Flutter project:
+## Highlight: SwipeableTransaction Widget
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The core interaction is a custom `SwipeableTransaction` widget built with `GestureDetector`. Swiping reveals a colored background — green for Needs, coral for Wants — giving immediate visual feedback before the action is confirmed.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# fin_flow
+```dart
+SwipeableTransaction(
+  transactionTitle: 'Coffee',
+  onSwipeRight: () => markAsNeed(),
+  onSwipeLeft: () => markAsWant(),
+)
+```
+
+## Tech Stack
+
+- Flutter + Dart
+- Custom gesture-based widget
+- Clean presentation layer
+
